@@ -23,10 +23,10 @@ jobs:
     - run: npm ci
     - run: make
     - run: |
-        mkdir parsegraph-TODO-PACKAGE-NAME
-        cp -r -t parsegraph-TODO-PACKAGE-NAME package.json package-lock.json README.md demo/ LICENSE dist/
-        tar cvzf parsegraph-TODO-PACKAGE-NAME.tar.gz parsegraph-TODO-PACKAGE-NAME/
+        mkdir parsegraph-checkglerror
+        cp -r -t parsegraph-checkglerror package.json package-lock.json README.md demo/ LICENSE dist/
+        tar cvzf parsegraph-checkglerror.tar.gz parsegraph-checkglerror/
     - uses: actions/upload-artifact@v2
       with:
-        name: parsegraph-TODO-PACKAGE-NAME-${{ github.run_number }}
-        path: parsegraph-TODO-PACKAGE-NAME.tar.gz
+        name: parsegraph-checkglerror-${{ github.run_number }}
+        path: parsegraph-checkglerror.tar.gz
