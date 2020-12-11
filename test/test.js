@@ -1,8 +1,10 @@
 var assert = require("assert");
-import todo from "../dist/checkglerror";
+import {setIgnoreGLErrors, ignoreGLErrors} from '../dist/checkglerror';
 
 describe("Package", function () {
   it("works", ()=>{
-    assert.equal(todo(), 42);
+    assert.equal(ignoreGLErrors(), true);
+    setIgnoreGLErrors(false);
+    assert.equal(ignoreGLErrors(), false);
   });
 });
