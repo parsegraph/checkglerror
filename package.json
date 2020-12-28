@@ -1,6 +1,6 @@
 {
   "name": "parsegraph-checkglerror",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "checkglerror",
   "main": "dist/checkglerror.js",
   "types": "dist/checkglerror.d.ts",
