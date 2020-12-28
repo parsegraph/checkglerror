@@ -3,6 +3,7 @@
   "version": "1.4.1",
   "description": "checkglerror",
   "main": "dist/checkglerror.js",
+  "types": "dist/checkglerror.d.ts",
   "scripts": {
     "coverage": "nyc npm run test",
     "test": "mocha -r @babel/register -r jsdom-global/register --recursive",
