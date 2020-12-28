@@ -1,15 +1,15 @@
 // Whether GL errors are checked or not; disabling this improves performance.
 
-let IGNORE_GL_ERRORS = true;
-export function setIgnoreGLErrors(value) {
+let IGNORE_GL_ERRORS:boolean = true;
+export function setIgnoreGLErrors(value:boolean):void {
   IGNORE_GL_ERRORS = value;
 }
 
-export function ignoreGLErrors() {
+export function ignoreGLErrors():boolean {
   return IGNORE_GL_ERRORS;
 }
 
-export function glErrorString(gl, err) {
+export function glErrorString(gl:WebGLRenderingContext, err:number) {
   if (arguments.length < 2) {
     throw new Error('A GL context must be provided with the error');
   }
@@ -33,15 +33,14 @@ export function glErrorString(gl, err) {
   }
 }
 
-export default function checkGLError(...args) {
+export default function checkGLError(gl:WebGLRenderingContext, ...args:any):void {
   if (IGNORE_GL_ERRORS) {
     return;
   }
-  const gl = args[0];
   let msg;
   if (args.length > 1) {
-    msg = args[1];
-    for (let i = 2; i < args.length; ++i) {
+    msg = args[0];
+    for (let i = 1; i < args.length; ++i) {
       msg += args[i];
     }
   }
