@@ -3,10 +3,12 @@ console.log("Loading checkglerror");
 
 let IGNORE_GL_ERRORS:boolean = true;
 export function setIgnoreGLErrors(value:boolean):void {
+  console.log("Setting ignore GL errors to: " + value);
   IGNORE_GL_ERRORS = value;
 }
 
 export function ignoreGLErrors():boolean {
+  console.log("Retrieving ignore GL errors");
   return IGNORE_GL_ERRORS;
 }
 
