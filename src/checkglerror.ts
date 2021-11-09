@@ -1,5 +1,5 @@
 // Whether GL errors are checked or not; disabling this improves performance.
-console.log("Loading checkglerror");
+//console.log("Loading checkglerror");
 
 let IGNORE_GL_ERRORS: boolean = true;
 export function setIgnoreGLErrors(value: boolean): void {
@@ -8,7 +8,7 @@ export function setIgnoreGLErrors(value: boolean): void {
 }
 
 export function ignoreGLErrors(): boolean {
-  console.log("Retrieving ignore GL errors");
+  // console.log("Retrieving ignore GL errors");
   return IGNORE_GL_ERRORS;
 }
 
