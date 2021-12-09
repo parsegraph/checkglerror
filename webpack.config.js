@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "parsegraph-checkglerror.js",
     globalObject: "this",
-    library: "parsegraph",
+    library: "parsegraph_checkglerror",
     libraryTarget: "umd",
   },
   module: {
