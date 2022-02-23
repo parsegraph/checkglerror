@@ -1,8 +1,5 @@
 import { assert } from "chai";
-import {
-  setIgnoreGLErrors,
-  ignoreGLErrors,
-} from "../dist/parsegraph-checkglerror";
+import { setIgnoreGLErrors, ignoreGLErrors } from "../src/index";
 
 describe("Package", function () {
   it("works", () => {
