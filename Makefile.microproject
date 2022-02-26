@@ -30,15 +30,23 @@ autobuild:
 .PHONY: autobuild
 
 install-deps:
-	yarn install --immutable --immutable-cache --check-cache
+	./install-deps.sh
 .PHONY: install-deps
 
 build-prod: $(PROD_LIB)
 .PHONY: build-prod
 
 demo: $(DEST_LIB)
-	cd demo && yarn install && yarn start
+	SITE_PORT=$(DEMO_PORT) cd demo && yarn install && yarn start
 .PHONY: demo
+
+tmux:
+	tmuxify restart $(DEMO_PORT)
+.PHONY: tmux
+
+stop-tmux:
+	tmuxify stop
+.PHONY: stop-tmux
 
 RUN_TEST=npx jest --env=jsdom
 
@@ -88,7 +96,7 @@ tar-prod: parsegraph-$(DIST_NAME)-prod.tgz
 .PHONY: tar
 
 wait:
-	inotifywait -e modify -r $(CONFIG_FILES) $(SCRIPT_FILES) $(EXTRA_SCRIPTS)
+	./wait.sh $(CONFIG_FILES) $(SCRIPT_FILES) $(EXTRA_SCRIPTS)
 .PHONY: wait
 
 clean:
