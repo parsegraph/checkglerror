@@ -1,6 +1,11 @@
-# checkglerror
+# parsegraph-checkglerror
 
-This package should be included as a peer dependency and external.
+This module checks for GL errors. It can be disabled on a global basis if it
+is included as a peer dependency.
 
-It optionally checks for GL errors, if enabled. For production, this
-should be disabled as this check is slow.
+This check is slow, so it should be disabled in production environments, like so:
+
+    <script src="parsegraph-checkglerror.js"></script>
+    <script>
+        parsegraph_checkglerror.setIgnoreGLErrors(true);
+    </script>
